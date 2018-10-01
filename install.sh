@@ -13,3 +13,10 @@ apt-get install -y nodejs
 
 # docker linter
 npm install dockerfilelint -g
+
+# TODO: Do we do this here?
+# TODO: Clean up taks in cluster that are running older versions of this image.
+# aws ssm agent
+curl -O https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/debian_amd64/amazon-ssm-agent.deb
+dpkg -i amazon-ssm-agent.deb
+systemctl status amazon-ssm-agent

@@ -13,3 +13,10 @@ apt-get install -y nodejs
 
 # docker linter
 npm install dockerfilelint -g
+
+# packer
+curl -o packer.zip $(curl https://releases.hashicorp.com/index.json | jq '{packer}' | egrep "linux.*amd64" | sort --version-sort -r | head -1 | awk -F[\"] '{print $4}')
+unzip packer.zip
+echo "export PATH=~/packer/:$PATH" >> ~/.bashrc
+
+# tests
